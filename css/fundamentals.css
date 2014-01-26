@@ -1,0 +1,32 @@
+.reveal .box {
+  background-color: #ccc;
+  width: 225px;
+  height: 225px;
+  margin-left: 5px;
+  border: 1px solid #333;
+  position: relative;
+  border-radius: 5px;
+}
+
+.box .name {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #333;
+  padding: 10px;
+}
+
+.box .value {
+  color: #333;
+  font-size: 120%;
+  top: 50px;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto;
+}
+.box .value::before { content: 'value: '; font-size: 80%; }
+.box .name::before { content: 'name: '; font-size: 80%; }
+
+pre.right {
+  width: 400px;
+}

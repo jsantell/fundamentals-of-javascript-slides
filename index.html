@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>The Fundamentals of JavaScript</title>
+
+		<meta name="description" content="The Fundamentals of JavaScript">
+		<meta name="author" content="Jordan Santell">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="vendor/styles/reveal.css">
+		<link rel="stylesheet" href="css/theme.css">
+		<link rel="stylesheet" href="css/fundamentals.css">
+		<link rel="stylesheet" href="vendor/styles/prettify.css">
+
+		<!--[if lt IE 9]>
+		<script src="vendor/scripts/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>JavaScript Fundamentals</h1>
+					<p>
+						<a href="http://jsantell.com">
+							Jordan Santell
+						</a> /
+						<a href="http://twitter.com/jsantell">
+							@jsantell
+						</a>
+					</p>
+				</section>
+
+				<section>
+					<h1>History of JavaScript</h1>
+					<ul>
+						<li>Made in 10 days in May 1995 by Brendan Eich of Netscape</li>
+						<li>Mocha -&gt; LiveScript -&gt; JavaScript</li>
+						<li>Taken to ECMA for standardization</li>
+					</ul>
+				</section>
+				<section>
+					<h1>ECMAScript</h1>
+					<ul>
+						<li>ECMA-262 Ed. 1 <a href="http://en.wikipedia.org/wiki/ECMAScript">ECMAScript</a> in 1996/1997</li>
+						<li>ES3 in 1999, modern JS</li>
+						<li>ES4 RIP</li>
+						<li><a href="http://kangax.github.io/es5-compat-table/">ES5</a> in 2009</li>
+						<li><a href="http://kangax.github.io/es5-compat-table/es6/">ES6</a> still being defined</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Support</h1>
+					<ul>
+						<li>ES3 Baseline, support to IE6</li>
+						<li>ES5 IE9+, FF4+, Chrome5+, Safari 5.1+</li>
+						<li>We'll start with only ES3</li>
+					</ul>
+				</section>
+				<section>
+					<h1>JavaScript Ubiquity</h1>
+					<ul>
+						<li>Browsers</li>
+						<li>Phones, native apps (Firefox OS)</li>
+						<li><a href="http://console.maban.co.uk/">Game Console browsers</a></li>
+						<li>Server (node.js)</li>
+						<li>JS powered Arduino bots</li>
+						<li>JS apps in TVs</li>
+					</ul>
+				</section>
+				<section>
+					<h1>REPL</h1>
+					<img src="images/repl1.png" />
+					<img src="images/repl2.png" />
+				</section>
+				<section>
+					<h1>Syllabus</h1>
+					<ul>
+						<li><strong>JavaScript Fundamentals</strong></li>
+						<li>Variables and Operators</li>
+						<li>Statements</li>
+						<li>Primitives, Objects and Types</li>
+						<li>Functions and Scoping</li>
+						<li>Prototypes</li>
+						<li>The DOM</li>
+						<li>Events</li>
+					</ul>
+				</section>
+	
+
+				<section>
+					<h1>Variables</h1>
+					<div class="box left">
+						<div class="value">5</div>
+						<div class="name">x</div>
+					</div>
+					<pre class="right">
+var x = 5;
+					</pre>
+				</section>
+
+				<section>
+					<h1>Variables</h1>
+					<div class="box left">
+						<div class="value">20</div>
+						<div class="name">x</div>
+					</div>
+					<pre class="right">
+var x = 5;
+x = 5 * 4;
+					</pre>
+				</section>
+				
+				<section>
+					<h1>Variables</h1>
+					<div class="box left">
+						<div class="value">5</div>
+						<div class="name">x</div>
+					</div>
+					<div class="box left">
+						<div class="value">8</div>
+						<div class="name">y</div>
+					</div>
+					<pre class="right">
+var x = 5;
+var y = 8;
+					</pre>
+				</section>
+				<section>
+					<h1>Variables</h1>
+					<div class="box left">
+						<div class="value">?</div>
+						<div class="name">x</div>
+					</div>
+					<div class="box left">
+						<div class="value">?</div>
+						<div class="name">y</div>
+					</div>
+					<pre class="right">
+var x = 5;
+var y = 8;
+x = x + 3 + y;
+y = x * 2;
+					</pre>
+				</section>
+				<section>
+					<h1>Variables</h1>
+					<div class="box left">
+						<div class="value">16</div>
+						<div class="name">x</div>
+					</div>
+					<div class="box left">
+						<div class="value">32</div>
+						<div class="name">y</div>
+					</div>
+					<pre class="right">
+var x = 5;
+var y = 8;
+x = x + 3 + y;
+y = x * 2;
+					</pre>
+				</section>
+				<section>
+					<h1>Variables</h1>
+					<div class="box left">
+						<div class="value">16</div>
+						<div class="name">x</div>
+					</div>
+					<pre class="right">
+var name = 'Jordan';
+var y = 8;
+x = x + 3 + y;
+y = x * 2;
+	
+				<section>
+					<h1>Variables</h1>
+					<p>Use <code>var</code> when defining!</p>
+					<p>Will explain scoping later</p>
+				</section>
+
+				<section>
+					<h1>Arithmetic Operators</h1>
+					<ul>
+						<li>Addition: +</li>
+						<li>Subtraction: -</li>
+						<li>Division: /</li>
+						<li>Multiply: *</li>
+						<li>Modulo: %</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Arithmetic Operators</h1>
+					<pre>
+var x = 5 * 6 + 1 / 4 - 5
+x // 25.25
+					</pre>
+					</section>
+				<section>
+					<h1>Arithmetic Operators</h1>
+					<pre>
+var x = 14 % 12
+x // 2
+					</pre>
+				</section>
+				<section>
+					<h1>Arithmetic Operators</h1>
+					<pre>
+var x = 5;
+x++; // 5
+x // 6
+					</pre>
+				</section>
+				<section>
+					<h1>Arithmetic Operators</h1>
+					<pre>
+var x = 5;
+++x; // 6
+x // 6
+					</pre>
+				</section>
+				<section>
+					<h1>Bitwise Operators</h1>
+					<ul>
+						<li>Binary AND: &</li>
+						<li>Binary OR: |</li>
+						<li>Binary XOR: ^</li>
+						<li>Binary NOT: ~</li>
+						<li>Left Shift: &lt;&lt;</li>
+						<li>Right Shift: &gt;&gt;</li>
+						<li>Zero Fill Right Shift: &gt;&gt;&gt;</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Bitwise Operators</h1>
+					<pre>
+7 &amp; 9; // 1
+//   0111
+// &amp; 1001
+//   ----
+//   0001
+					</pre>
+				</section>
+		
+				<section>
+					<h1>Assignment Operators</h1>
+					<ul>
+						<li>=</li>
+						<li>*=</li>
+						<li>+=</li>
+						<li>...</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Assignment Operators</h1>
+					<pre>
+var x = 5;
+x *= 2; // x = x * 2;
+x; // 10
+					</pre>
+				</section>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<section data-background="images/firefoxos_swoop.jpg">
+					<h1>Thanks!</h1>
+					<ul>
+						<li>Jordan Santell</li>
+						<li><a href="http://twitter.com/jsantell">@jsantell</a></li>
+						<li><a href="http://jsantell.github.io/developing-firefox-os-apps">slides</a></li>
+						<li><a href="http://github.com/jsantell/developing-firefox-os-apps">source</a></li>
+					</ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="vendor/scripts/prettify.js"></script>
+		<script src="vendor/scripts/reveal.js"></script>
+		<script>
+			prettyPrint();
+			Reveal.initialize({
+				controls: false,
+				progress: true,
+				history: true,
+				center: true,
+				transition: 'fade'
+			});
+		</script>
+	</body>
+</html>
