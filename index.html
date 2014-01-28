@@ -35,7 +35,10 @@
 						</a>
 					</p>
 				</section>
-
+				<section>
+					<h1>Slides</h1>
+					<p><a href="http://github.com/jsantell/fundamentals-of-javascript-slides">http://github.com/jsantell/fundamentals-of-javascript-slides</a></p>
+				</section>
 				<section>
 					<h1>History of JavaScript</h1>
 					<ul>
@@ -83,6 +86,7 @@
 					<ul>
 						<li><strong>JavaScript Fundamentals</strong></li>
 						<li>Variables and Operators</li>
+						<li>Arrays</li>
 						<li>Statements</li>
 						<li>Primitives, Objects and Types</li>
 						<li>Functions and Scoping</li>
@@ -91,7 +95,6 @@
 						<li>Events</li>
 					</ul>
 				</section>
-	
 
 				<section>
 					<h1>Variables</h1>
@@ -168,15 +171,23 @@ y = x * 2;
 				<section>
 					<h1>Variables</h1>
 					<div class="box left">
-						<div class="value">16</div>
-						<div class="name">x</div>
+						<div class="value">'Tom'</div>
+						<div class="name">name</div>
 					</div>
 					<pre class="right">
-var name = 'Jordan';
-var y = 8;
-x = x + 3 + y;
-y = x * 2;
-	
+var name = 'Tom';
+					</pre>
+				</section>
+				<section>
+					<h1>Variables</h1>
+					<div class="box left">
+						<div class="value">true</div>
+						<div class="name">isOn</div>
+					</div>
+					<pre class="right">
+var isOn = true;
+					</pre>
+				</section>
 				<section>
 					<h1>Variables</h1>
 					<p>Use <code>var</code> when defining!</p>
@@ -264,35 +275,829 @@ x *= 2; // x = x * 2;
 x; // 10
 					</pre>
 				</section>
+
+				<section>
+					<h1>Arrays</h1>
+					<ul>
+						<li>List of ordered elements</li>
+						<li>Mixed types</li>
+					</ul>
+					<pre>
+var a = ['abc', 4, false];
+					</pre>
+				</section>
+				<section>
+					<h1>Accessing Elements</h1>
+					<pre>
+var x = ['a', 'b', 'c'];
+x[0]; // 'a'
+x[2]; // 'c'
+					</pre>
+				</section>
+				<section>
+					<h1>Mutable Elements</h1>
+					<pre>
+var x = ['a', 'b', 'c'];
+x[0]; // 'a'
+x[0] = 'changed!';
+x[0]; // 'changed!'
+					</pre>
+				</section>
+				<section>
+					<h1>Mutable Length</h1>
+					<pre>
+var x = ['a', 'b', 'c'];
+x.length; // 3
+x[10] = 'j';
+x.length // 11
+					</pre>
+				</section>
+				<section>
+					<h1>Array Methods</h1>
+					<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Mutator_methods">Mutator Methods</a></p>
+					<ul>
+						<li>array.push()</li>
+						<li>array.pop()</li>
+						<li>array.shift()</li>
+						<li>array.unshift()</li>
+						<li>array.splice()</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Array Methods</h1>
+					<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Accessor_methods">Accessor Methods</a></p>
+					<ul>
+						<li>array.indexOf()</li>
+						<li>array.concat()</li>
+						<li>array.join()</li>
+						<li>array.slice()</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Pattern</h1>
+					<pre>
+function (val) {
+  val = [].concat(val);
+  // iterate over all
+  // elements of `val`
+}
+					</pre>
+				</section>
+				<section>
+					<h1>Equality Operators</h1>
+					<ul>
+						<li>==</li>
+						<li>!=</li>
+						<li>===</li>
+						<li>!==</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Conditional Statements</h1>
+					<pre>
+var user = 'Beth';
+if (user === 'Beth')
+  console.log("Yup, it's Beth");
+					</pre>
+				</section>
+				<section>
+					<h1>Conditional Statements</h1>
+					<pre>
+var user = 'Beth';
+if (user === 'Beth')
+  console.log("Yup, it's Beth");
+else
+  console.log("Nope, not Beth");
+					</pre>
+				</section>
+				<section>
+					<h1>Conditional Statements</h1>
+					<pre>
+var user = 'Beth';
+if (user === 'Beth')
+  console.log("Yup, it's Beth");
+else if (user === 'Joe')
+  console.log("Not Joe either");
+else
+  console.log("Who is this?");
+					</pre>
+				</section>
+				<section>
+					<h1>Conditional Statements</h1>
+					<pre>
+var user = 'Beth';
+if (user === 'Beth') {
+  console.log("Yup, it's Beth");
+  loginUser(user);
+}
+else
+  console.log("Nope, not Beth");
+					</pre>
+				</section>
+				<section>
+					<h1>Ternary Operators</h1>
+					<pre>
+var msg = loggedIn() ? 'profile' : 'sign in';
+					</pre>
+					</section>
+				<section>
+					<h1>Pro Boolean Operators</h1>
+					<pre>
+var w = true &amp;&amp; true;
+var x = true &amp;&amp; false;
+var y = false &amp;&amp; false;
+var z = false &amp;&amp; true;
+					</pre>
+				</section>
+				<section>
+					<h1>Pro Boolean Operators</h1>
+					<pre>
+var w = true || true;
+var x = true || false;
+var y = false || false;
+var z = false || true;
+					</pre>
+				</section>
+				<section>
+					<h1>Pro Boolean Operators</h1>
+					<pre>
+var name = userName || 'Unknown';
+					</pre>
+				</section>
+				<section>
+					<h1>Control Statements</h1>
+					<pre>
+var n = 0;
+while (n &lt; 10) {
+  console.log(n + ' sheep');
+  n++;
+}
+					</pre>
+				</section>
+				<section>
+					<h1>Control Statements</h1>
+					<pre>
+var u = ['joe', 'sue', 'tom'];
+for (var i = 0; i &lt; u.length; i++) {
+  console.log('Here is ' + u[i]);
+}
+// "Here is joe"
+// "Here is sue"
+// "Here is tom"
+					</pre>
+				</section>
+
+				<section>
+					<h1>Adding JS to a page</h1>
+					<pre>
+&lt;html&gt;
+  &lt;head&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+					</pre>
+				</section>
+				<section>
+					<h1>Syntax Time</h1>
+					<ul>
+						<li>./problems/syntax/index.html</li>
+						<li>./problems/syntax/euler1.js</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Types</h1>
+					<ul>
+						<li>number</li>
+						<li>string</li>
+						<li>boolean</li>
+						<li>Object</li>
+						<li>Array</li>
+						<li>undefined</li>
+						<li>null</li>
+					</ul>
+				</section>
+				<section>
+					<h1>typeof</h1>
+					<pre>
+typeof 5; // 'number'
+typeof 'hello'; // 'string'
+typeof false; // 'boolean'
+typeof []; // 'object'
+					</pre>
+				</section>
+				<section>
+					<h1>Primitives</h1>
+					<pre>
+var n = 5;
+var s = 'hello';
+var b = true;
+var a = [];
+var o = {}; 
+					</pre>
+				</section>
+				<section>
+					<h1>Primitives</h1>
+					<pre>
+typeof 5; // 'number'
+typeof (new Number(5)); // 'object'
+typeof 'hi'; // 'string'
+typeof (new String('hi')); // 'object'
+					</pre>
+				</section>
+				<section>
+					<h1>Primitives</h1>
+					<pre>
+5 === 5;
+// true
+new Number(5) === new Number(5);
+// false
+					</pre>
+				</section>
+				<section>
+					<h1>Types</h1>
+					<pre>
+typeof null; // 'object'
+typeof undefined; // 'undefined'
+null == undefined; // true
+null === undefined; // false
+					</pre>
+				</section>
+				<section>
+					<h1>Truthiness</h1>
+					<pre>
+var x = 'hello';
+if (x) console.log('truthy!');
+					</pre>
+				</section>
+				<section>
+					<h1>Truthy</h1>
+					<ul>
+						<li>non-0 numbers</li>
+						<li>non-0 length strings</li>
+						<li>All arrays</li>
+						<li>All objects (except null)</li>
+						<li>`true`</li>
+					</ul>
+				</section>
 				
+				<section>
+					<h1>Falsy</h1>
+					<ul>
+						<li>0</li>
+						<li>empty string ''</li>
+						<li>undefined</li>
+						<li>null</li>
+						<li>`false`</li>
+					</ul>
+				</section>
 				
+				<section>
+					<h1>Truthiness</h1>
+					<pre>
+var a = [];
+if (0)
+  a.push('hello');
+
+if (a)
+  console.log('the array is truthy!');
+					</pre>
+				</section>
+				<section>
+					<h1>Truthiness</h1>
+					<pre>
+var a = [];
+if (a.length)
+  console.log('hello!');
+					</pre>
+				</section>
+				<section>
+					<h1>Type Coersion</h1>
+					<pre>
+// What happens?
+5 === '5'
+5 == '5'
+null == undefined
+null === undefined
+					</pre>
+				</section>
+				<section>
+					<h1>Type Coersion</h1>
+					<pre>
+// What happens?
+5 === '5'; // false
+5 == '5'; // true
+null == undefined; // true
+null === undefined; // false
+					</pre>
+				</section>
+				<section>
+					<h1>Uniqueness</h1>
+					<pre>
+var array1 = ['hi'];
+var array2 = ['hi'];
+var array3 = array1;
+
+array1 !== array2;
+array1 === array3;
+					</pre>
+				</section>
+				<section>
+					<h1>Objects</h1>
+					<p>Non primitives are objects</p>
+					<p>Hash, map, dictionary, key-value</p>
+				</section>
 				
+				<section>
+					<h1>Object Primitive</h1>
+					<pre>
+var o = {};
+o.name = 'Jordan';
+o.lang = 'JavaScript';
+
+o.name; // 'Jordan'
+o.hairColor; // undefined
+					</pre>
+				</section>
+				<section>
+					<h1>Object Primitive</h1>
+					<pre>
+var o = {
+  name: 'Jordan',
+  lang: 'JavaScript'
+};
+
+o.name; // 'Jordan'
+o.hairColor; // undefined
+					</pre>
+				</section>
+				<section>
+					<h1>Object Primitive</h1>
+					<pre>
+var o = {};
+o['name'] = 'Jordan';
+o['lang'] = 'JavaScript';
+
+o.name; // 'Jordan'
+o.hairColor; // undefined
+					</pre>
+				</section>
+				<section>
+					<h1>Object Primitive</h1>
+					<pre>
+var o = {};
+o['π'] = Math.PI;
+o['½'] = 0.5;
+o[''] = null;
+					</pre>
+				</section>
+				<section>
+					<h1>Object.keys()</h1>
+					<pre>
+var o = {
+  name: 'Jordan',
+  lang: 'JavaScript'
+};
+
+Object.keys(o);
+// ['name', 'lang']
+					</pre>
+				</section>
 				
+				<section>
+					<h1>Dynamically accessing</h1>
+					<pre>
+var o = {
+  name: 'Jordan',
+  lang: 'JavaScript'
+};
+var keys = Object.keys(o);
+for (var i = 0; i &lt; keys.length; i++)
+  console.log(keys+': '+o[keys[i]];
+// 'name: Jordan'
+// 'lang: JavaScript'
+					</pre>
+				</section>
 				
+				<section>
+					<h1>Object Example</h1>
+					<p>An array of objects, each object representing a person with 'name', and 'age' properties.</p>
+					<p>Print out all properties of all objects one at a time, if the age is greater than some age.</p>
+				</section>
+				<section>
+					<h1>Object Example</h1>
+					<ul>
+						<li>./problems/objects/index.html</li>
+						<li>./problems/objects/objects.js</li>
+					</ul>
+				</section>
+		
+				<section>
+					<h1>Functions</h1>
+					<p>Procedure that takes arguments and has a context</p>
+				</section>
+				<section>
+					<h1>Functions</h1>
+					<pre>
+square(5); // 25
+square(3); // 9
+
+function square (x) {
+  return x * x;
+}
+					</pre>
+				</section>
 				
+				<section>
+					<h1>Function Declaration</h1>
+					<pre>
+square(5); // 25
+square(3); // 9
+
+function square (x) {
+  return x * x;
+}
+					</pre>
+				</section>
+				<section>
+					<h1>Function Expression</h1>
+					<pre>
+square(5); // 25
+square(3); // 9
+
+var square = function (x) {
+  return x * x;
+}
+					</pre>
+				</section>
+				<section>
+					<h1>Function Expression</h1>
+					<pre>
+square(5); // 25
+square(3); // 9
+
+// `square` IS NOT DEFINED!
+
+var square = function (x) {
+  return x * x;
+}
+					</pre>
+				</section>
 				
+				<section>
+					<h1>Function Expression</h1>
+					<pre>
+var square = function (x) {
+  return x * x;
+}
+
+square(5); // 25
+square(3); // 9
+					</pre>
+				</section>
+				<section>
+					<h1>Hoisting</h1>
+					<pre>
+console.log(y); // undefined
+
+var y = 5;
+
+console.log(y); // 5
+					</pre>
+				</section>
+				<section>
+					<h1>Scope</h1>
+					<pre>
+var x = 5;
+
+console.log(x); // 5
+console.log(y); // throws
+
+function fn () {
+  var y = 1;
+  console.log(x); // 5
+  console.log(y); // 1
+}
+					</pre>
+				</section>
+				<section>
+					<h1>Closures</h1>
+					<pre>
+var incrementer = createIncrement(5);
+incrementer(); // 6
+incrementer(); // 7
+incrementer(); // 8
+
+function createIncrement (x) {
+  var inc = x;
+  return function () {
+    return ++inc;
+  }
+}
+					</pre>
+				</section>
 				
+				<section>
+					<h1>First Class Objects</h1>
+					<pre>
+var doSomething = function () {}
+[1,2,3].forEach(doSomething);
+					</pre>
+				</section>
 				
+				<section>
+					<h1>forEach</h1>
+					<pre>
+[1,2,3].forEach(function (x) {
+  console.log(x);
+});
+
+forEach([1,2,3], function (x) {
+  console.log(x);
+});
+					</pre>
+				</section>
 				
+				<section>
+					<h1>map</h1>
+					<pre>
+[1,2,3].map(function (x) {
+  return x * x;
+});
+// [1,4,9];
+
+map([1,2,3], function (x) {
+  return x * x;
+});
+// [1,4,9];
+					</pre>
+				</section>
 				
+				<section>
+					<h1>reduce</h1>
+					<pre>
+[1,2,3].reduce(function (sum, x) {
+  return sum + x;
+}, 0);
+// 6
+					</pre>
+				</section>
+				<section>
+					<h1>Functions</h1>
+					<ul>
+						<li>./problems/functions/index.html</li>
+						<li>./problems/functions/functions.js</li>
+						<li>Defining functions</li>
+						<li>Pass functions as variables</li>
+						<li>Using anonymous functions</li>
+						<li>Using closures</li>
+					</ul>
+				</section>
 				
+				<section>
+					<h1>Callbacks</h1>
+					<pre>
+var id = 12345;
+getUserInfo(id, function (user) {
+  console.log(user);
+});
+					</pre>
+				</section>
+				<section>
+					<h1>Asynchronous (AJAX)</h1>
+					<pre>
+console.log(1);
+getUserInfo(id, function (user) {
+  console.log(2);
+});
+console.log(3);
+// 1
+// 3
+// 2
+					</pre>
+				</section>
+				<section>
+					<h1>XHR</h1>
+					<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest">API</a></p>
+				</section>
+				<section>
+					<h1>Async</h1>
+					<pre>
+function fakeAjax (id, callback) {
+  setTimeout(function () {
+    callback({});
+  }, 2000);
+}
+					</pre>
+				</section>
+				<section>
+					<h1>Async</h1>
+					<ul>
+						<li>./problems/async/index.html</li>
+						<li>./problems/async/async.js</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Prototypes</h1>
+					<pre>
+var person = new Person();
+					</pre>
+				</section>
+				<section>
+					<h1>Prototypes</h1>
+					<pre>
+var person = new Person();
+
+function Person (options) {
+  options = options || {};
+  this.name = options.name;
+  this.lang = options.lang;
+}
+					</pre>
+				</section>
 				
+				<section>
+					<h1>Prototypes</h1>
+					<pre>
+var person = new Person({
+  name: 'Brendan Eich'
+});
+person.name; // 'Brendan Eich'
+
+function Person (options) {
+  options = options || {};
+  this.name = options.name;
+  this.lang = options.lang;
+}
+					</pre>
+				</section>
 				
+				<section>
+					<h1>Prototypes</h1>
+					<pre>
+function Person (options) {
+  options = options || {};
+  this.name = options.name;
+}
+
+Person.prototype.walk = function () {
+  console.log(this.name + ' walks!');
+  this.walking = true;
+}
+
+					</pre>
+				</section>
+				<section>
+					<h1>instanceof</h1>
+					<pre>
+var per = new Person();
+var dev = new Developer();
+per instanceof Person; // true
+dev instanceof Person; // true
+per instanceof Developer; // false
+dev instanceof Developer; // true
+per instanceof Object; // true
+					</pre>
+				</section>
+				<section>
+					<h1>Prototypes</h1>
+					<ul>
+						<li>./problems/prototypes/index.html</li>
+						<li>./problems/prototypes/prototypes.js</li>
+					</ul>
+				</section>
+				<section>
+					<h1>ES5 Object Creation</h1>
+					<pre>
+var Person = {
+  age: 0,
+  walk: function () {}
+};
+var person = Object.create(Person, {
+  name: 'Carrie Mathison',
+  age: 34
+});
+					</pre>
+				</section>
+				<section>
+					<h1>Mixins</h1>
+					<pre>
+function extend (source, obj) {
+  for (var prop in obj)
+    source[prop] = obj[prop];
+  return source;
+}
+					</pre>
+				</section>
+				<section>
+					<h1>Mixins</h1>
+					<pre>
+var JugglerMixin = {
+  juggle: function () {}
+};
+
+extend(Person.prototype, JugglerMixin);
+extend(Animal.prototype, JugglerMixin);
+					</pre>
+				</section>
 				
-				
-				
-				
-				
-				
-				
-				
-				<section data-background="images/firefoxos_swoop.jpg">
+				<section>
+					<h1>ES5 Getters/Setters</h1>
+					<pre>
+Object.defineProperty(p, 'full', {
+  get: function () {
+    return this.first + ' ' + this.last;
+  },
+  set: function (name) {
+    this.first = name.split(' ')[0];
+    this.last = name.split(' ')[1];
+  }
+});
+					</pre>
+				</section>
+				<section>
+					<h1>Property Descriptors</h1>
+					<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty">docs</a></p>
+					<ul>
+						<li>configurable</li>
+						<li>enumerable</li>
+						<li>value</li>
+						<li>writable</li>
+						<li>get/set</li>
+					</ul>
+				</section>
+				<section>
+					<h1>bind</h1>
+					<pre>
+function handleLogin (event) {
+  loginUser(this);
+}
+
+function Person () {
+  this.onLogin = handleLogin.bind(this);
+}
+					</pre>
+				</section>
+				<section>
+					<h1>call</h1>
+					<pre>
+function add (x, y) {
+  return x + y;
+}
+function delay (fn) {
+  return function () {
+    var args = arguments;
+    setTimeout(function () {
+      fn.call(null, args[0], args[1]);
+    }, 1000);
+  }
+}
+					</pre>
+				</section>
+				<section>
+					<h1>call</h1>
+					<pre>
+var delayedAdd = delay(add);
+delayedAdd(1, 3);
+// 4
+				</section>
+				<section>
+					<h1>apply</h1>
+					<pre>
+function delay (fn) {
+  return function () {
+    var args = arguments;
+    setTimeout(function () {
+      fn.apply(null, args);
+    }, 1000);
+  }
+}
+					</pre>
+				</section>
+				<section>
+					<h1>apply</h1>
+					<pre>
+var delayedAdd = delay(add);
+delayedAdd(1,2,3,4);
+// 10
+					</pre>
+				</section>
+				<section>
+					<h1>DOM</h1>
+				</section>
+				<section>
+					<h1>DOM</h1>
+					<ul>
+						<li>./problems/dom/index.html</li>
+						<li>./problems/dom/dom.js</li>
+					</ul>
+				</section>
+				<section>
 					<h1>Thanks!</h1>
 					<ul>
 						<li>Jordan Santell</li>
 						<li><a href="http://twitter.com/jsantell">@jsantell</a></li>
-						<li><a href="http://jsantell.github.io/developing-firefox-os-apps">slides</a></li>
-						<li><a href="http://github.com/jsantell/developing-firefox-os-apps">source</a></li>
+						<li><a href="http://github.com/jsantell/fundamentals-of-javascript-slides">slides</a></li>
 					</ul>
 				</section>
 			</div>
