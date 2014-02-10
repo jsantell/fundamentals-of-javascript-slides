@@ -19,6 +19,9 @@
 		<!--[if lt IE 9]>
 		<script src="vendor/scripts/html5shiv.js"></script>
 		<![endif]-->
+		<script>
+			document.write( '<link rel="stylesheet" href="vendor/styles/reveal-' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
 	</head>
 
 	<body>
